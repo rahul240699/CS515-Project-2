@@ -86,7 +86,7 @@ def main():
                 continue
         
         if inp[0] == "inventory":
-            print("Inventory:")
+            print("Inventory: ")
             if len(a.inventory) > 0:
                 for i in a.inventory:
                     print(f" {i}")
