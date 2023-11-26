@@ -45,10 +45,12 @@ class adventure:
         return True
     
     def show_inventory(self):
-        print("Inventory: ")
         if len(self.inventory) > 0:
+            print("Inventory: ")
             for i in self.inventory:
-                print(f"{i}")
+                print(f" {i}")
+        else:
+            print("You're not carrying anything.")
         return True
 
     def quit(self):
