@@ -43,6 +43,20 @@ class adventure:
         else:
             print(f"There's no {item} anywhere.")
         return True
+    
+    def show_inventory(self):
+        print("Inventory: ")
+        if len(self.inventory) > 0:
+            for i in self.inventory:
+                print(f"{i}")
+        return True
+
+    def quit(self):
+        print("Goodbye!")
+        return False   
+    
+
+
 def main():
     try:
         with open(sys.argv[1]) as file:
@@ -66,7 +80,7 @@ def main():
         # print(f"{inp[0]}")
         
         if inp[0] == "quit":
-            print("Goodbye!")
+            a.quit()
             return 0
         
         if inp[0] == "look":
@@ -86,11 +100,7 @@ def main():
                 continue
         
         if inp[0] == "inventory":
-            print("Inventory: ")
-            if len(a.inventory) > 0:
-                for i in a.inventory:
-                    print(f" {i}")
-            continue
+           a.show_inventory()
 
 
 
