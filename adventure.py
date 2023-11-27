@@ -37,6 +37,12 @@ class adventure:
         return True
 
     def get(self, item):
+        temp_item = ""
+        if isinstance(item, list):
+            for i in item:
+                temp_item += i + " "
+            temp_item = temp_item[:-1]
+        item = temp_item
         if item in self.map[self.room]['items']:
             self.inventory_items.append(item)
             self.map[self.room]['items'].remove(item)
@@ -74,6 +80,12 @@ class adventure:
                 print(f" {i}")
     
     def drop(self, item):
+        temp_item = ""
+        if isinstance(item, list):
+            for i in item:
+                temp_item += i + " "
+            temp_item = temp_item[:-1]
+        item = temp_item
         if item in self.inventory_items:
             self.inventory_items.remove(item)
             if "items"  not in self.map[self.room].keys():
@@ -84,6 +96,11 @@ class adventure:
             print(f"You dont't have the {item} in your inventory to drop.")
 
 
+    def lock(self):
+        pass
+
+    def unlock(self):
+        pass
 
 def main():
     try:
@@ -126,7 +143,7 @@ def main():
 
         if inp[0] == "get":
             if len(inp) > 1:
-                a.get(inp[1])
+                a.get(inp[1:])
             else:
                 print("Sorry, you need to 'get' something.")
                 continue
@@ -139,7 +156,7 @@ def main():
 
         if inp[0] == "drop":
             if len(inp) > 1:
-                a.drop(inp[1])
+                a.drop(inp[1:])
             else:
                 print("Sorry, you need to 'drop' something.")
                 continue        
