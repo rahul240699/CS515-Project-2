@@ -103,7 +103,7 @@ def main():
             continue
         except KeyboardInterrupt as e:
             print("Traceback (most recent call last):")
-            print(" ...\n")
+            print(" ...")
             print("KeyboardInterrupt")
             # print(traceback.format_exc())
             return 0
