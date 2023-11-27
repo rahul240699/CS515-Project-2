@@ -1,10 +1,11 @@
 import sys
 import json
 import traceback
+import inspect
 
 class adventure:
     def __init__(self, map):
-        self.inventory = []
+        self.inventory_items = []
         self.room = 0
         self.map = map
 
@@ -37,17 +38,17 @@ class adventure:
 
     def get(self, item):
         if item in self.map[self.room]['items']:
-            self.inventory.append(item)
+            self.inventory_items.append(item)
             self.map[self.room]['items'].remove(item)
             print(f"You pick up the {item}.")
         else:
             print(f"There's no {item} anywhere.")
         return True
     
-    def show_inventory(self):
-        if len(self.inventory) > 0:
+    def inventory(self):
+        if len(self.inventory_items) > 0:
             print("Inventory: ")
-            for i in self.inventory:
+            for i in self.inventory_items:
                 print(f" {i}")
         else:
             print("You're not carrying anything.")
@@ -60,7 +61,17 @@ class adventure:
     #Extensions
 
     def help(self):
-        print(dir(adventure))
+        all_attributes = dir(adventure)
+        functions = [func for func in all_attributes if not func.startswith("__") and not func.endswith("__")]
+        print("You can run the following commands:")
+        for i in functions:
+            func = getattr(adventure, i)
+            signature = inspect.signature(func)
+            parameters = signature.parameters
+            if len(parameters) > 1:
+                print(f" {i} ...")
+            else:
+                print(f" {i}")
     
 
 
@@ -108,7 +119,7 @@ def main():
                 continue
         
         if inp[0] == "inventory":
-           a.show_inventory()
+           a.inventory()
 
         if inp[0] == "help":
             a.help()
