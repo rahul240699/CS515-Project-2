@@ -55,7 +55,12 @@ class adventure:
 
     def quit(self):
         print("Goodbye!")
-        return False   
+        return False
+    
+    #Extensions
+
+    def help(self):
+        print(dir(adventure))
     
 
 
@@ -94,6 +99,7 @@ def main():
             else:
                 print("Sorry, you need to 'go' somewhere.")
                 continue
+
         if inp[0] == "get":
             if len(inp) > 1:
                 a.get(inp[1])
@@ -103,6 +109,9 @@ def main():
         
         if inp[0] == "inventory":
            a.show_inventory()
+
+        if inp[0] == "help":
+            a.help()
 
 
 
