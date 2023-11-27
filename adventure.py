@@ -81,7 +81,7 @@ class adventure:
             self.map[self.room]["items"].append(item)
             print(f"You drop the {item}.")
         else:
-            print(f"You dont't have {item} to drop.")
+            print(f"You dont't have the {item} in your inventory to drop.")
 
 
 
@@ -102,7 +102,10 @@ def main():
             print("\nUse 'quit' to exit.")
             continue
         except KeyboardInterrupt as e:
-            print(traceback.format_exc())
+            print("Traceback (most recent call last):")
+            print(" ...\n")
+            print("KeyboardInterrupt")
+            # print(traceback.format_exc())
             return 0
         inp = inp.strip().lower().split(" ")
         # print(f"{inp[0]}")
