@@ -73,6 +73,16 @@ class adventure:
             else:
                 print(f" {i}")
     
+    def drop(self, item):
+        if item in self.inventory_items:
+            self.inventory_items.remove(item)
+            if "items"  not in self.map[self.room].keys():
+                self.map[self.room]["items"] = []
+            self.map[self.room]["items"].append(item)
+            print(f"You drop the {item}.")
+        else:
+            print(f"You dont't have {item} to drop.")
+
 
 
 def main():
@@ -124,8 +134,12 @@ def main():
         if inp[0] == "help":
             a.help()
 
-
-
+        if inp[0] == "drop":
+            if len(inp) > 1:
+                a.drop(inp[1])
+            else:
+                print("Sorry, you need to 'drop' something.")
+                continue        
         
 
 if __name__ == "__main__":
