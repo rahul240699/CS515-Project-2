@@ -42,7 +42,7 @@ class adventure:
             for i in item:
                 temp_item += i + " "
             temp_item = temp_item[:-1]
-        item = temp_item
+            item = temp_item
         if item in self.map[self.room]['items']:
             self.inventory_items.append(item)
             self.map[self.room]['items'].remove(item)
@@ -85,7 +85,7 @@ class adventure:
             for i in item:
                 temp_item += i + " "
             temp_item = temp_item[:-1]
-        item = temp_item
+            item = temp_item
         if item in self.inventory_items:
             self.inventory_items.remove(item)
             if "items"  not in self.map[self.room].keys():
