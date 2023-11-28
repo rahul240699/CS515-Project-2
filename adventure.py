@@ -61,7 +61,7 @@ class adventure:
         return True
 
     def quit(self):
-        print("\nGoodbye!")
+        print("Goodbye!")
         return False
     
     #Extensions
