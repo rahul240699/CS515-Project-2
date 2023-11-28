@@ -96,9 +96,6 @@ class adventure:
             print(f"You dont't have the {item} in your inventory to drop.")
 
 
-    def __checklock__(self):
-        pass
-
     def lock(self):
         pass
 
