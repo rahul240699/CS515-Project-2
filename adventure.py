@@ -18,7 +18,7 @@ class adventure:
                 if self.map[temp_room]["locked"] == 1:
                     print("The door is locked, you need to unlock the door.")
                     return True
-            print(f"\nYou go {dir}.\n")
+            print(f"You go {dir}.\n")
             self.room = self.map[self.room]['exits'][dir]
             self.look()
         return True
