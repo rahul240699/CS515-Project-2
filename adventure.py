@@ -51,9 +51,9 @@ class adventure:
         if item in self.map[self.room]['items']:
             self.inventory_items.append(item)
             self.map[self.room]['items'].remove(item)
-            print(f"\nYou pick up the {item}.")
+            print(f"You pick up the {item}.")
         else:
-            print(f"\nThere's no {item} anywhere.")
+            print(f"There's no {item} anywhere.")
         return True
     
     def inventory(self):
@@ -66,7 +66,7 @@ class adventure:
         return True
 
     def quit(self):
-        print("\nGoodbye!")
+        print("Goodbye!")
         return False
     
     #Extensions
