@@ -11,7 +11,7 @@ class adventure:
 
     def go(self, dir):
         if dir not in self.map[self.room]['exits'].keys():
-            print(f"\nThere's no way to go {dir}.")
+            print(f"There's no way to go {dir}.")
         else:
             temp_room = self.map[self.room]['exits'][dir]
             if "locked" in self.map[temp_room].keys():
@@ -169,14 +169,14 @@ def main():
             if len(inp) > 1:
                 a.go(inp[1])
             else:
-                print("\nSorry, you need to 'go' somewhere.")
+                print("Sorry, you need to 'go' somewhere.")
                 continue
 
         if inp[0] == "get":
             if len(inp) > 1:
                 a.get(inp[1:])
             else:
-                print("\nSorry, you need to 'get' something.")
+                print("Sorry, you need to 'get' something.")
                 continue
         
         if inp[0] == "inventory":
