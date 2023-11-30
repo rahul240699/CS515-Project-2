@@ -3,11 +3,11 @@ import os
 import subprocess
 import difflib
 
-process = subprocess.run(["cat test.in | python3 adventure.py loop.map"], capture_output= True, shell= True, text=True)
+process = subprocess.run(["cat test1.in | python3 adventure.py loop.map"], capture_output= True, shell= True, text=True)
 
 output = process.stdout
 
-with open("test.out", "r") as file:
+with open("test2.out", "r") as file:
     expected_output = file.read()
 
 def compare_strings(string1, string2):

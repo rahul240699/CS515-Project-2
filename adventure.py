@@ -101,22 +101,6 @@ class adventure:
             print(f"You dont't have the {item} in your inventory to drop.")
 
 
-    # def lock(self):
-    #     if dir not in self.map[self.room]['exits'].keys():
-    #         print(f"There's no door in the {dir}.")
-    #     else:
-    #         temp_room = self.map[self.room]['exits'][dir]
-    #         if "locked" in self.map[temp_room].keys() or self.map[temp_room]["locked"] == 0:
-    #             key = self.map[temp_room]["key"]
-    #             if key in self.inventory_items:
-    #                 print("You have now unlocked the door")
-    #                 self.map[temp_room]["locked"] = 1
-    #             else:
-    #                 print("You don't have the correct key to lock the door.")
-    #         elif "locked" in self.map[temp_room].keys() and self.map[temp_room]["locked"] == 1:
-    #             print("The door is already locked.")
-    #         elif "locked" not in self.map[temp_room].keys():
-    #             print("The door cannot be locked.")
 
     def unlock(self, dir):
         if dir not in self.map[self.room]['exits'].keys():
@@ -161,38 +145,31 @@ def main():
         if inp[0] == "quit":
             a.quit()
             return 0
-        
-        if inp[0] == "look":
-            a.look()
-        
-        if inp[0] == "go":
+        elif inp[0] == "look":
+            a.look() 
+        elif inp[0] == "go":
             if len(inp) > 1:
                 a.go(inp[1])
             else:
                 print("Sorry, you need to 'go' somewhere.")
                 continue
-
-        if inp[0] == "get":
+        elif inp[0] == "get":
             if len(inp) > 1:
                 a.get(inp[1:])
             else:
                 print("Sorry, you need to 'get' something.")
                 continue
-        
-        if inp[0] == "inventory":
+        elif inp[0] == "inventory":
            a.inventory()
-
-        if inp[0] == "help":
+        elif inp[0] == "help":
             a.help()
-
-        if inp[0] == "drop":
+        elif inp[0] == "drop":
             if len(inp) > 1:
                 a.drop(inp[1:])
             else:
                 print("Sorry, you need to 'drop' something.")
                 continue
-
-        if inp[0] == "unlock":
+        elif inp[0] == "unlock":
             if len(inp)>1:
                 a.unlock(inp[1])
             else:
