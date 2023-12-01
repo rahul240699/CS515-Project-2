@@ -14,7 +14,7 @@ I spent around 7 hours approximately on the project.
 2. Later on I wrote test cases in the format specified in description, and wrote a test harness to check the output.
 
 ## Unresolved Issue or bug
-1. Although the basic functionality is completely implemented, the autograder doesnt clear some of the tests.
+1. Although the basic functionality is completely implemented, the autograder doesn't clear some of the tests.
 
 ## Examples of difficult bugs resolved
 1. I didn't encounter any masjor issue as such.
@@ -72,7 +72,7 @@ What would you like to do? drop x
 You dont't have the x in your inventory to drop.
 ```
 
-3. **Locked doors** : I have implemented a locked door extension where certain doors will be locked on the map, the door can be unlocked using **unlock** command. Every locked door will need a specific key that will be needed to unlock the door. The key can searched in the map. If the player posesses this key in their inventory, they will be able to unlock the door The follwing example shows the locked door extension.
+3. **Locked doors** : I have implemented a locked door extension where certain doors will be locked on the map, the door can be unlocked using **unlock** command. Every locked door will need a specific key that will be needed to unlock the door. The key can searched in the map. If the player posesses this key in their inventory, they will be able to unlock the door The follwing example shows the locked door extension. You need to use **lock.map** file provided as the map for using this extension.
 ```
 > A white room
 
