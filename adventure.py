@@ -149,13 +149,11 @@ def main():
                 a.go(inp[1])
             else:
                 print("Sorry, you need to 'go' somewhere.")
-                continue
         elif inp[0] == "get":
             if len(inp) > 1:
                 a.get(inp[1:])
             else:
                 print("Sorry, you need to 'get' something.")
-                continue
         elif inp[0] == "inventory":
            a.inventory()
         elif inp[0] == "help":
@@ -165,13 +163,11 @@ def main():
                 a.drop(inp[1:])
             else:
                 print("Sorry, you need to 'drop' something.")
-                continue
         elif inp[0] == "unlock":
-            if len(inp)>1:
+            if len(inp) > 1:
                 a.unlock(inp[1])
             else:
-                print("Sorry, you need to choose a door to unlock.")
-                continue        
+                print("Sorry, you need to choose a door to unlock.")    
         else:
             print("Invalid Command!")
 
