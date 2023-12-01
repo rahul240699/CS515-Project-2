@@ -48,7 +48,8 @@ class adventure:
                 temp_item += i + " "
             temp_item = temp_item[:-1]
             item = temp_item
-        if item in self.map[self.room]['items']:
+        
+        if "items" in self.map[self.room].keys() and item in self.map[self.room]['items']:
             self.inventory_items.append(item)
             self.map[self.room]['items'].remove(item)
             print(f"You pick up the {item}.")
@@ -134,13 +135,9 @@ def main():
             print("\nUse 'quit' to exit.")
             continue
         except KeyboardInterrupt as e:
-            # print("Traceback (most recent call last):")
-            # print(" ...")
-            # print("KeyboardInterrupt")
             print(traceback.format_exc())
             return 0
         inp = inp.strip().lower().split(" ")
-        # print(f"{inp[0]}")
         
         if inp[0] == "quit":
             a.quit()
