@@ -7,13 +7,17 @@ process = subprocess.run(["cat test1.in | python3 adventure.py loop.map"], captu
 
 output = process.stdout
 
-with open("test2.out", "r") as file:
+with open("test_2_1.out", "r") as file:
     expected_output = file.read()
+
+with open("test_2.out", "r") as f:
+    my_output = f.read()
+
 
 def compare_strings(string1, string2):
     d = difflib.Differ()
     diff = d.compare(string1.splitlines(), string2.splitlines())
     return '\n'.join(diff)
 
-differences = compare_strings(expected_output, output)
+differences = compare_strings(expected_output, my_output)
 print("Differences:\n", differences)
