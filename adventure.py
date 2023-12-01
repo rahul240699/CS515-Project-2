@@ -61,7 +61,7 @@ class adventure:
         if len(self.inventory_items) > 0:
             print("Inventory: ")
             for i in sorted(self.inventory_items):
-                print(f" {i}")
+                print(f"  {i}")
         else:
             print("You're not carrying anything.")
         return True
@@ -172,7 +172,8 @@ def main():
             else:
                 print("Sorry, you need to choose a door to unlock.")
                 continue        
-        
+        else:
+            print("Invalid Command!")
 
 if __name__ == "__main__":
     main()
