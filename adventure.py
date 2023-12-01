@@ -135,14 +135,11 @@ def main():
         except EOFError as e:
             print("\nUse 'quit' to exit.")
             continue
-        # except KeyboardInterrupt as e:
-        #     print(traceback.format_exc())
-        #     return 0
         inp = inp.strip().lower().split(" ")
         
         if inp[0] == "quit":
             a.quit()
-            return 0
+            return
         elif inp[0] == "look":
             a.look() 
         elif inp[0] == "go":
