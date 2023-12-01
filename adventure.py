@@ -131,11 +131,11 @@ def main():
 
     while True:
         try:
-            inp = input("What would you like to do? ")
+            inp = input("What would you like to do? ").strip().lower().split(" ")
         except EOFError as e:
             print("\nUse 'quit' to exit.")
             continue
-        inp = inp.strip().lower().split(" ")
+        # inp = inp.strip().lower().split(" ")
         
         if inp[0] == "quit":
             a.quit()
