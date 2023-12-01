@@ -14,6 +14,7 @@ class adventure:
             print(f"There's no way to go {dir}.")
         else:
             temp_room = self.map[self.room]['exits'][dir]
+            # This part is for the extension of locked door, this wont affect the running
             if "locked" in self.map[temp_room].keys():
                 if self.map[temp_room]["locked"] == 1:
                     print("The door is locked, you need to unlock the door.")
@@ -134,9 +135,9 @@ def main():
         except EOFError as e:
             print("\nUse 'quit' to exit.")
             continue
-        except KeyboardInterrupt as e:
-            print(traceback.format_exc())
-            return 0
+        # except KeyboardInterrupt as e:
+        #     print(traceback.format_exc())
+        #     return 0
         inp = inp.strip().lower().split(" ")
         
         if inp[0] == "quit":
