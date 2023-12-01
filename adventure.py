@@ -135,7 +135,6 @@ def main():
         except EOFError as e:
             print("\nUse 'quit' to exit.")
             continue
-        # inp = inp.strip().lower().split(" ")
         
         if inp[0] == "quit":
             a.quit()
