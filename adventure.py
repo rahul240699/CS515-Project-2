@@ -30,7 +30,7 @@ class adventure:
         if "items" in self.map[self.room].keys():
             items = self.map[self.room]['items']
             i_string = ""
-            if len(items) >= 1:
+            if len(items) > 0:
                 for i in items:
                     i_string += f"{i}, "
                 print(f"Items: {i_string[:-2]}\n")
