@@ -1,4 +1,4 @@
-# CS 515 Project 1
+# CS 515 Project 2
 
 ## Author Information
 Rahul Sohandani 
