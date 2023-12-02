@@ -27,7 +27,7 @@ class adventure:
     def look(self):
         print(f"> {self.map[self.room]['name']}\n")
         print(f"{self.map[self.room]['desc']}\n")
-        if "items" in self.map[self.room].keys():
+        if "items" in self.map[self.room].keys() and len(self.map[self.room]['items']) > 1:
             items = self.map[self.room]['items']
             i_string = ""
             if len(items) >= 1:
