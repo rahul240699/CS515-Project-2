@@ -60,7 +60,7 @@ class adventure:
     
     def inventory(self):
         if len(self.inventory_items) > 0:
-            print("Inventory: ")
+            print("Inventory:")
             for i in sorted(self.inventory_items):
                 print(f"  {i}")
         else:
