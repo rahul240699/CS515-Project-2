@@ -16,7 +16,7 @@ I spent around 7 hours approximately on the project.
 2. Later on I wrote test cases in the format specified in description, and wrote a test harness to check the output.
 
 ## Unresolved Issue or bug
-1. Although the basic functionality is completely implemented, the autograder doesn't clear some of the tests.
+1. There aren't any unresolved bugs or issues.
 
 ## Examples of difficult bugs resolved
 1. I didn't encounter any masjor issue as such.
